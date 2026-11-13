@@ -1,0 +1,22 @@
+export const LANGS = { en: 'English', es: 'Español', fr: 'Français', it: 'Italiano', pt: 'Português', uk: 'Українська' };
+
+const T = {
+  en: { title: 'Wizarding Archive', yourName: 'Your name', save: 'Save', logout: 'Log out', hello: 'Welcome,', search: 'Search…', all1: 'All', all2: 'All (sub-filter)', favOnly: 'Favorites only', more: 'Load more', close: 'Close', details: 'Details', loading: 'Loading…', empty: 'Nothing found. Try another search or filter.', retry: 'Retry', needName: 'Enter your name first to save favorites.', sortIdx: 'Default order', sortAz: 'A → Z', sortZa: 'Z → A', characters: 'Characters', spells: 'Spells', houses: 'Houses', books: 'Books' },
+  es: { title: 'Archivo Mágico', yourName: 'Tu nombre', save: 'Guardar', logout: 'Salir', hello: 'Bienvenido,', search: 'Buscar…', all1: 'Todos', all2: 'Todos (subfiltro)', favOnly: 'Solo favoritos', more: 'Cargar más', close: 'Cerrar', details: 'Detalles', loading: 'Cargando…', empty: 'Sin resultados. Prueba otra búsqueda o filtro.', retry: 'Reintentar', needName: 'Escribe tu nombre para guardar favoritos.', sortIdx: 'Orden original', sortAz: 'A → Z', sortZa: 'Z → A', characters: 'Personajes', spells: 'Hechizos', houses: 'Casas', books: 'Libros' },
+  fr: { title: 'Archives Magiques', yourName: 'Votre nom', save: 'Enregistrer', logout: 'Quitter', hello: 'Bienvenue,', search: 'Rechercher…', all1: 'Tous', all2: 'Tous (sous-filtre)', favOnly: 'Favoris uniquement', more: 'Voir plus', close: 'Fermer', details: 'Détails', loading: 'Chargement…', empty: 'Aucun résultat. Essayez une autre recherche.', retry: 'Réessayer', needName: 'Saisissez votre nom pour enregistrer des favoris.', sortIdx: 'Ordre initial', sortAz: 'A → Z', sortZa: 'Z → A', characters: 'Personnages', spells: 'Sorts', houses: 'Maisons', books: 'Livres' },
+  it: { title: 'Archivio Magico', yourName: 'Il tuo nome', save: 'Salva', logout: 'Esci', hello: 'Benvenuto,', search: 'Cerca…', all1: 'Tutti', all2: 'Tutti (sotto-filtro)', favOnly: 'Solo preferiti', more: 'Carica altro', close: 'Chiudi', details: 'Dettagli', loading: 'Caricamento…', empty: 'Nessun risultato. Prova un’altra ricerca.', retry: 'Riprova', needName: 'Inserisci il tuo nome per salvare i preferiti.', sortIdx: 'Ordine originale', sortAz: 'A → Z', sortZa: 'Z → A', characters: 'Personaggi', spells: 'Incantesimi', houses: 'Case', books: 'Libri' },
+  pt: { title: 'Arquivo Mágico', yourName: 'Seu nome', save: 'Salvar', logout: 'Sair', hello: 'Bem-vindo,', search: 'Buscar…', all1: 'Todos', all2: 'Todos (subfiltro)', favOnly: 'Somente favoritos', more: 'Carregar mais', close: 'Fechar', details: 'Detalhes', loading: 'Carregando…', empty: 'Nada encontrado. Tente outra busca.', retry: 'Tentar de novo', needName: 'Digite seu nome para salvar favoritos.', sortIdx: 'Ordem original', sortAz: 'A → Z', sortZa: 'Z → A', characters: 'Personagens', spells: 'Feitiços', houses: 'Casas', books: 'Livros' },
+  uk: { title: 'Чарівний архів', yourName: 'Ваше ім’я', save: 'Зберегти', logout: 'Вийти', hello: 'Вітаємо,', search: 'Пошук…', all1: 'Усі', all2: 'Усі (підфільтр)', favOnly: 'Лише обрані', more: 'Показати ще', close: 'Закрити', details: 'Деталі', loading: 'Завантаження…', empty: 'Нічого не знайдено. Спробуйте інший пошук.', retry: 'Повторити', needName: 'Введіть ім’я, щоб зберігати обране.', sortIdx: 'Початковий порядок', sortAz: 'А → Я', sortZa: 'Я → А', characters: 'Персонажі', spells: 'Закляття', houses: 'Гуртожитки', books: 'Книги' }
+};
+
+export const t = (lang, key) => T[lang]?.[key] ?? T.en[key] ?? key;
+
+const F = {
+  en: { characters: ['House', 'Children'], spells: ['Letter', 'Words'], houses: ['Animal', 'Color'], books: ['Year', 'Pages'] },
+  es: { characters: ['Casa', 'Hijos'], spells: ['Letra', 'Palabras'], houses: ['Animal', 'Color'], books: ['Año', 'Páginas'] },
+  fr: { characters: ['Maison', 'Enfants'], spells: ['Lettre', 'Mots'], houses: ['Animal', 'Couleur'], books: ['Année', 'Pages'] },
+  it: { characters: ['Casa', 'Figli'], spells: ['Lettera', 'Parole'], houses: ['Animale', 'Colore'], books: ['Anno', 'Pagine'] },
+  pt: { characters: ['Casa', 'Filhos'], spells: ['Letra', 'Palavras'], houses: ['Animal', 'Cor'], books: ['Ano', 'Páginas'] },
+  uk: { characters: ['Гуртожиток', 'Діти'], spells: ['Літера', 'Слова'], houses: ['Тварина', 'Колір'], books: ['Рік', 'Сторінки'] }
+};
+export const filterLabels = (lang, cat) => (F[lang] || F.en)[cat];

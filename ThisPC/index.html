@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wizarding Archive</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>body{font-family:Lora,serif}h1,h2,h3,.fx{font-family:Cinzel,serif}</style>
+</head>
+<body class="bg-stone-950 text-red-50 min-h-screen">
+<header class="sticky top-0 z-20 bg-stone-900/95 backdrop-blur border-b border-red-700/40 px-4 py-3">
+  <div class="max-w-6xl mx-auto flex flex-wrap items-center gap-3">
+    <h1 class="text-xl font-extrabold text-red-800 mr-auto" data-i18n="title"></h1>
+    <form id="userForm" class="flex gap-2"><input id="userName" class="bg-stone-800 rounded px-2 py-1 text-sm w-32" data-ph="yourName">
+      <button class="bg-red-600 hover:bg-red-500 text-stone-950 rounded px-3 py-1 text-sm" data-i18n="save"></button></form>
+    <div id="userBox" class="hidden items-center gap-2 text-sm"><span id="hello"></span><button id="logout" class="underline text-red-500" data-i18n="logout"></button></div>
+    <select id="lang" class="bg-stone-800 rounded px-2 py-1 text-sm"></select>
+  </div>
+</header>
+<main class="max-w-6xl mx-auto px-4 py-6">
+  <nav id="tabs" class="flex flex-wrap gap-2 mb-5"></nav>
+  <section class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 mb-6">
+    <input id="search" class="bg-stone-800 rounded px-3 py-2 lg:col-span-2" data-ph="search">
+    <select id="f1" class="bg-stone-800 rounded px-3 py-2"></select>
+    <select id="f2" class="bg-stone-800 rounded px-3 py-2"></select>
+    <select id="sort" class="bg-stone-800 rounded px-3 py-2"></select>
+    <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="favOnly"><span data-i18n="favOnly"></span></label>
+  </section>
+  <div id="status" class="text-center py-10"></div>
+  <div id="grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+  <div class="text-center mt-6"><button id="more" class="hidden bg-stone-800 hover:bg-stone-700 rounded px-5 py-2" data-i18n="more"></button></div>
+</main>
+<div id="modal" class="hidden fixed inset-0 z-30 bg-black/70 flex items-center justify-center p-4">
+  <div class="bg-stone-900 border border-red-700/50 rounded-lg max-w-lg w-full max-h-[85vh] overflow-auto p-5">
+    <div id="modalBody"></div><button id="close" class="mt-4 bg-red-600 text-stone-950 rounded px-4 py-1" data-i18n="close"></button>
+  </div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
